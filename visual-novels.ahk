@@ -282,8 +282,8 @@
     Return
     2::
         if WinActive("Cyanotype Daydream") {
-            cyanotype_daydream_layer := "Thinking and Porn"
-            GuiTopLeft("Thinking and Porn")
+            cyanotype_daydream_layer := "Thinking and H-Scene"
+            GuiTopLeft("Thinking and H-Scene")
         } else {
             SendInput, {2}
         }
