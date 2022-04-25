@@ -509,3 +509,6 @@ Return
 ; Open Window spy
 Numpad0 & .::run, "C:\Program Files\AutoHotkey\WindowSpy.ahk"
 NumpadIns & .::run, "C:\Program Files\AutoHotkey\WindowSpy.ahk"
+
+#Include, visual-novels.ahk
+#Include, btd6.ahk
