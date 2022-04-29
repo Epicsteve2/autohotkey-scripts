@@ -1,5 +1,5 @@
 #SingleInstance, Force
-SendMode Input
+; SendMode Input
 SetWorkingDir, %A_ScriptDir%
 
 current_layer := "BTD6"
