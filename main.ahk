@@ -6,6 +6,7 @@ current_layer := "BTD6"
 tower_click := false
 tower_upgrade := false
 btd6_map := "X Factor"
+btd6_map := "Spillway"
 
 koichoco_pid := "11312"
 
@@ -88,7 +89,8 @@ map_list := ["Chutes"
     ,"Encrypted"
     ,"Bloonarius Prime"
     ,"Infernal"
-    ,"Haunted"]
+    ,"Haunted"
+    ,"Spillway"]
 
 btd6_key_bindings := {"dart": "q"
     , "hero": "u"

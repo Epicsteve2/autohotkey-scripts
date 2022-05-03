@@ -618,4 +618,18 @@
         NumpadIns & x::PlaceTower("", 0,0)
         NumpadIns & c::PlaceTower("", 0,0)
     #if
+    #if (btd6_map = "Spillway")
+        NumpadIns & q::PlaceTower("boomer", 479, 724)
+        NumpadIns & w::PlaceTower("dart", 1355, 259)
+        NumpadIns & e::PlaceTower("sniper", 271, 873)
+        NumpadIns & r::PlaceTower("hero", 431, 503) ; etienne
+        NumpadIns & t::PlaceTower("village", 312, 702)
+        NumpadIns & y::PlaceTower("dartling", 214, 909) 
+        NumpadIns & u::PlaceTower("tack", 843, 546)
+        NumpadIns & i::PlaceTower("glue", 438, 564)
+        ; ability 22 and 27
+        ; possible to double discount boomer, but idk how viable it is
+        ; also upgrade sniper
+        ; perma a bit before glone on 98s
+    #if
 #if
