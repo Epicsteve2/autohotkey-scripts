@@ -621,12 +621,14 @@
     #if (btd6_map = "Spillway")
         NumpadIns & q::PlaceTower("boomer", 479, 724)
         NumpadIns & w::PlaceTower("dart", 1355, 259)
-        NumpadIns & e::PlaceTower("sniper", 271, 873)
+        NumpadIns & e::PlaceTower("sniper", 271, 873) ; get 101 before boomerang bionic
         NumpadIns & r::PlaceTower("hero", 431, 503) ; etienne
         NumpadIns & t::PlaceTower("village", 312, 702)
         NumpadIns & y::PlaceTower("dartling", 214, 909) 
         NumpadIns & u::PlaceTower("tack", 843, 546)
         NumpadIns & i::PlaceTower("glue", 438, 564)
+        NumpadIns & o::PlaceTower("ice", 438, 564) ; do this after update cuz it broken
+        ; don't get turbo charge
         ; ability 22 and 27
         ; possible to double discount boomer, but idk how viable it is
         ; also upgrade sniper

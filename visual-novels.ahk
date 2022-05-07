@@ -236,13 +236,15 @@
 #if
 #if (current_layer = "Cafe Stella")
     IfCafeStellaKey(new_key, original_key) {
-        if WinActive("ahk_exe CafeStella.exe")
+        ; WinActive("Café Stella and the Reapers' Butterflies") and 
+        ; Doesnt work... prolly cuz of the 'e' in cafe
+        if (WinActive("ahk_class TVPMainWindow") and WinActive("ahk_exe CafeStella.exe"))
             SendInput, {%new_key%}
         else
             SendInput, {%original_key%}
     }
     $m::
-        if WinActive("ahk_exe CafeStella.exe") {
+        if (WinActive("ahk_class TVPMainWindow") and WinActive("ahk_exe CafeStella.exe")) {
             MouseGetPos, x_original, y_original 
             SendInput, {m}
             SetDefaultMouseSpeed, 0 ; Default is 2
@@ -259,6 +261,19 @@
     $c::IfCafeStellaKey("0", "c")
     $j::IfCafeStellaKey("", "j")
 #if
+
+#if (current_layer = "Parquet")
+    IfParquetKey(new_key, original_key) {
+        if WinActive("ahk_exe PARQUET.exe")
+            SendInput, {%new_key%}
+        else
+            SendInput, {%original_key%}
+    }
+    $t::IfParquetKey("y", "t")
+    $c::IfParquetKey("0", "c")
+    $j::IfParquetKey("", "j")
+#if
+
 #if (current_layer = "Cyanotype Daydream") ; FRICK this isn't gonna work out...
     IfCyanotypeDaydreamKey(new_key, original_key) {
         if WinActive("Cyanotype Daydream")

@@ -8,9 +8,67 @@ tower_upgrade := false
 btd6_map := "X Factor"
 btd6_map := "Spillway"
 
-koichoco_pid := "11312"
+; sendinput breaks osu editor, some VN's and yea
 
-cyanotype_daydream_layer := "Rin"
+; dumb syntax -> https://www.autohotkey.com/boards/viewtopic.php?t=66878
+layer_list := ["Main"
+    ,"Sugar * Style"
+    ,"BTD6"
+    ,"Dead Omegalul Aegis"
+    ,"Rewrite"
+    ,"Kinkoi"
+    ,"Hatsukoi"
+    ,"Hoshi Ori"
+    ,"Cafe Stella"
+    ,"Cyanotype Daydream"
+    ,"Koichoco"
+    ,"Parquet"]
+
+map_list := ["Chutes"
+    ,"Bazaar"
+    ,"Peninsula"
+    ,"Underground"
+    ,"Cargo"
+    ,"Cornfield"
+    ,"Flooded Valley"
+    ,"X Factor"
+    ,"Underground"
+    ,"High Finance"
+    ,"Adora's Temple"
+    ,"Pat's Pond"
+    ,"Dark Castle"
+    ,"Encrypted"
+    ,"Bloonarius Prime"
+    ,"Infernal"
+    ,"Haunted"
+    ,"Spillway"]
+
+btd6_key_bindings := {"dart": "q"
+    , "hero": "u"
+    , "tack": "r"
+    , "village": "k"
+    , "alch": "f"
+    , "sniper": "z"
+    , "glue": "y"
+    , "spike": "j"
+    , "sub": "x"
+    , "heli": "b"
+    , "boomer": "w"
+    , "bomb": "e"
+    , "ice": "t"
+    , "bucc": "c"
+    , "ace": "v"
+    , "heli": "b"
+    , "mortar": "n"
+    , "dartling": "m"
+    , "wizard": "a"
+    , "super": "s"
+    , "druid": "g"
+    , "farm": "h"
+    , "ninja": "d"
+    , "engineer": "l"}
+
+cyanotype_daydream_layer := "No dream"
 cyanotype_daydream_key_bindings := {"Rin": { "a": [1455, 1065]
         , "s": [1585, 1058]
         , "l": [1624, 1059]
@@ -57,65 +115,6 @@ cyanotype_daydream_key_bindings := {"Rin": { "a": [1455, 1065]
         , "m": [1693, 1060]
         , "r": [583, 876]
         , "v": [583, 876]}}
-
-; sendinput breaks osu editor, some VN's and yea
-
-; dumb syntax -> https://www.autohotkey.com/boards/viewtopic.php?t=66878
-layer_list := ["Main"
-    ,"Sugar * Style"
-    ,"BTD6"
-    ,"Dead Omegalul Aegis"
-    ,"Rewrite"
-    ,"Kinkoi"
-    ,"Hatsukoi"
-    ,"Hoshi Ori"
-    ,"Cafe Stella"
-    ,"Cyanotype Daydream"
-    ,"Koichoco"]
-
-map_list := ["Chutes"
-    ,"Bazaar"
-    ,"Peninsula"
-    ,"Underground"
-    ,"Cargo"
-    ,"Cornfield"
-    ,"Flooded Valley"
-    ,"X Factor"
-    ,"Underground"
-    ,"High Finance"
-    ,"Adora's Temple"
-    ,"Pat's Pond"
-    ,"Dark Castle"
-    ,"Encrypted"
-    ,"Bloonarius Prime"
-    ,"Infernal"
-    ,"Haunted"
-    ,"Spillway"]
-
-btd6_key_bindings := {"dart": "q"
-    , "hero": "u"
-    , "tack": "r"
-    , "village": "k"
-    , "alch": "f"
-    , "sniper": "z"
-    , "glue": "y"
-    , "spike": "j"
-    , "sub": "x"
-    , "heli": "b"
-    , "boomer": "w"
-    , "bomb": "e"
-    , "ice": "t"
-    , "bucc": "c"
-    , "ace": "v"
-    , "heli": "b"
-    , "mortar": "n"
-    , "dartling": "m"
-    , "wizard": "a"
-    , "super": "s"
-    , "druid": "g"
-    , "farm": "h"
-    , "ninja": "d"
-    , "engineer": "l"}
 
 keyboard_order := ["q"
     ,"w"
@@ -281,10 +280,78 @@ launchOrSwitchMusic() {
 }
 launchOrSwitchCode() {
     if (WinExist("ahk_exe Code.exe"))
-        WinActivate, ahk_exe Code.exe
+        if (WinActive("ahk_exe Code.exe"))
+            WinActivateBottom, ahk_exe Code.exe
+        else
+            WinActivate, ahk_exe Code.exe
     Else
         Run "C:\Users\Stephen\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 }
+
+launchOrSwitchThunderbird() {
+    if (WinExist("ahk_exe thunderbird.exe") and WinExist("ahk_class MozillaWindowClass"))
+        WinActivate, ahk_exe thunderbird.exe
+    Else
+        Run "C:\Program Files (x86)\Mozilla Thunderbird\thunderbird.exe"
+}
+
+launchOrSwitchBottom() {
+    ; WinExist("bottom") and 
+    if (WinExist("ahk_exe WindowsTerminal.exe"))
+        WinActivate
+}
+
+thunderbirdOrBottom() {
+    if WinActive("ahk_exe WindowsTerminal.exe") {
+        launchOrSwitchThunderbird()
+    } else {
+        launchOrSwitchBottom()
+    }
+}
+
+Numpad0 & Numpad4::thunderbirdOrBottom()
+NumpadDel & NumpadLeft::thunderbirdOrBottom()
+
+; NumpadDot & e::launchOrSwitchBottom()
+; NumpadDot & r::launchOrSwitchThunderbird()
+; NumpadDot & t::thunderbirdOrBottom()
+
+; www.autohotkey.com/board/topic/31878-get-alwaysontop-state/?p=203015
+NumpadDot & t::
+    active_window_id := WinExist("A")
+    Winset, Alwaysontop, , % "ahk_id " . active_window_id
+    WinGet, active_title, ProcessName, % "ahk_id " . active_window_id
+    WinGet, ExStyle, ExStyle, % "ahk_id " . active_window_id
+    if (ExStyle & 0x8)
+        GuiTopLeft(active_title . "`nis now always on top")
+    else
+        GuiTopLeft(active_title . "`nis normal")
+Return
+
+; List of keybindings (manually updated...)
+NumpadDot & /::
+    ; what the f**k? Why do you have to escape '&'?
+    keybinding_list := [["Numpad0 && t", "Toggle always on top"]
+        ,["NumpadDot && Numpad1", "Select layer"]]
+    Gui, New, ToolWindow, 
+
+    Gui, Font, S15, MesloLGS NF
+    Gui, Add, Text, , % "Keybindings: "
+
+    for index, keybind in keybinding_list {
+        Gui, Font, S15 bold
+        Gui, Add, Text, XM Y+1, % "  " . keybind[1]
+
+        Gui, Font, S15 norm
+
+        Gui, Add, Text, X+0 , % ": " . keybind[2]
+    }
+
+    Gui, -Caption +AlwaysOnTop
+    Gui, Show, NoActivate AutoSize X1920 Y0,
+    sleep, 5000
+    Gui, Destroy
+Return
 
 clickAndReturn(x, y) {
     SetDefaultMouseSpeed, 0
@@ -415,9 +482,9 @@ NumpadIns & NumpadHome::
     Sleep, 750
     Gui, Destroy
 Return
-; Cyanotype Daydream
+; Cafe Stella
 Numpad0 & Numpad8::
-    current_layer := "Cyanotype Daydream"
+    current_layer := "Cafe Stella"
     Gui, New, ToolWindow, 
 
     Gui, Font, S15, MesloLGS NF
@@ -432,7 +499,7 @@ Numpad0 & Numpad8::
     Gui, Destroy
 Return
 NumpadIns & NumpadUp::
-    current_layer := "Cyanotype Daydream"
+    current_layer := "Cafe Stella"
     Gui, New, ToolWindow, 
 
     Gui, Font, S15, MesloLGS NF
@@ -446,37 +513,37 @@ NumpadIns & NumpadUp::
     Sleep, 750
     Gui, Destroy
 Return
-; BTD6
-Numpad0 & Numpad4::
-    current_layer := "BTD6"
-    Gui, New, ToolWindow, 
+; ; BTD6
+; Numpad0 & Numpad4::
+;     current_layer := "BTD6"
+;     Gui, New, ToolWindow, 
 
-    Gui, Font, S15, MesloLGS NF
-    Gui, Add, Text, , % "Layer: "
+;     Gui, Font, S15, MesloLGS NF
+;     Gui, Add, Text, , % "Layer: "
 
-    Gui, Font, S15 bold
-    Gui, Add, Text, X+0, % current_layer
+;     Gui, Font, S15 bold
+;     Gui, Add, Text, X+0, % current_layer
 
-    Gui, -Caption +AlwaysOnTop
-    Gui, Show, NoActivate AutoSize X1920 Y0,
-    Sleep, 750
-    Gui, Destroy
-Return
-NumpadIns & NumpadLeft::
-    current_layer := "BTD6"
-    Gui, New, ToolWindow, 
+;     Gui, -Caption +AlwaysOnTop
+;     Gui, Show, NoActivate AutoSize X1920 Y0,
+;     Sleep, 750
+;     Gui, Destroy
+; Return
+; NumpadIns & NumpadLeft::
+;     current_layer := "BTD6"
+;     Gui, New, ToolWindow, 
 
-    Gui, Font, S15, MesloLGS NF
-    Gui, Add, Text, , % "Layer: "
+;     Gui, Font, S15, MesloLGS NF
+;     Gui, Add, Text, , % "Layer: "
 
-    Gui, Font, S15 bold
-    Gui, Add, Text, X+0, % current_layer
+;     Gui, Font, S15 bold
+;     Gui, Add, Text, X+0, % current_layer
 
-    Gui, -Caption +AlwaysOnTop
-    Gui, Show, NoActivate AutoSize X1920 Y0,
-    Sleep, 750
-    Gui, Destroy
-Return
+;     Gui, -Caption +AlwaysOnTop
+;     Gui, Show, NoActivate AutoSize X1920 Y0,
+;     Sleep, 750
+;     Gui, Destroy
+; Return
 
 ; Reload script
 NumpadIns & NumpadPgup::
@@ -488,22 +555,32 @@ Numpad0 & Numpad9::
     Reload
 Return
 
-; Print cursor position
+; Print cursor position. relative to window
 Numpad0 & /::
+    CoordMode, mouse, Screen
     MouseGetPos, x_position, y_position
     GuiTopLeft("The cursor is at`nx=" . x_position . ", y=" . y_position)
 return
 NumpadIns & /::
+    CoordMode, mouse, Screen
     MouseGetPos, x_position, y_position
     GuiTopLeft("The cursor is at`nx=" . x_position . ", y=" . y_position)
 Return
+; Get absolute mouse pos
+; NumpadDot & /::
+;     CoordMode, mouse, Screen
+;     MouseGetPos, x_position, y_position
+;     GuiTopLeft("The cursor is at`nx=" . x_position . ", y=" . y_position)
+; return
 ; Copy cursor position to clipboard
 NumpadIns & NumpadClear::
+    CoordMode, mouse, Screen
     MouseGetPos, x_position, y_position
     clipboard := x_position ", " y_position
     GuiTopLeft("Copied to clipboard:`n" . x_position . ", " . y_position)
 Return
 Numpad0 & Numpad5::
+    CoordMode, mouse, Screen
     MouseGetPos, x_position, y_position
     clipboard := x_position ", " y_position
     GuiTopLeft("Copied to clipboard:`n" . x_position . ", " . y_position)
@@ -512,5 +589,46 @@ Return
 Numpad0 & .::run, "C:\Program Files\AutoHotkey\WindowSpy.ahk"
 NumpadIns & .::run, "C:\Program Files\AutoHotkey\WindowSpy.ahk"
 
+NumpadDot & q::
+    if (WinExist("Translation Aggregator v1.0.6 (Unofficial)") and WinExist("ahk_class Translation Aggregator Main Window") and WinExist("ahk_exe TranslationAggregator.exe")) {
+        WinSet, Top,, % "Translation Aggregator v1.0.6 (Unofficial)"
+        WinClose, % "Translation Aggregator v1.0.6 (Unofficial)"
+    }
+    if (WinExist("Menu Window") and WinExist("ahk_class Chrome_WidgetWin_1") and WinExist("ahk_exe userInterface.exe")) {
+        WinHide, % "Menu Window"
+    }
+    if (WinExist("Translation Display Window") and WinExist("ahk_class Chrome_WidgetWin_1") and WinExist("ahk_exe userInterface.exe")) {
+        WinSet, Top,, % "Translation Display Window"
+        WinMove, % "Translation Display Window", , 1920, 0
+    }
+    if (WinExist("Screen Capture Window") and WinExist("ahk_class Chrome_WidgetWin_1") and WinExist("ahk_exe userInterface.exe")) {
+        WinSet, Top,, % "Screen Capture Window"
+        WinMove, % "Screen Capture Window", , 2600, 0
+    }
+    if (WinExist("Background Removal Window") and WinExist("ahk_class Chrome_WidgetWin_1") and WinExist("ahk_exe userInterface.exe")) {
+        WinSet, Top,, % "Background Removal Window"
+        WinMove, % "Background Removal Window", , 2880, 0, A_ScreenWidth / 2, A_ScreenHeight ;/ 2
+    }
+    if (WinExist("electron-quick-start") and WinExist("ahk_class Chrome_WidgetWin_1") and WinExist("ahk_exe userInterface.exe")) {
+        WinSet, Top,, % "electron-quick-start"
+        WinMove, % "electron-quick-start", , 301, 960, 1300, 104 ; for cyanotype (and prolly principia games and newton)
+        WinSet AlwaysOnTop, On, % "electron-quick-start"
+    }
+    if (WinExist("C:\windows\system32\cmd.exe") and WinExist("ahk_class ConsoleWindowClass") and WinExist("ahk_exe userInterface.exe")) {
+        WinHide, % "C:\windows\system32\cmd.exe"
+    }
+    ; brightness min is 171
+Return
+
+NumpadDot & w::
+    WinGetTitle, active_title, A
+    GuiTopLeft("Active window is:`n" . active_title)
+Return
+
 #Include, visual-novels.ahk
 #Include, btd6.ahk
+
+; https://www.autohotkey.com/boards/viewtopic.php?t=57703
+#Include, easy-window-dragging.ahk
+!LButton::WindowMouseDragMove()
+!RButton::WindowMouseDragResize()
