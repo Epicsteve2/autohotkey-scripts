@@ -299,6 +299,8 @@ launchOrSwitchBottom() {
     ; WinExist("bottom") and 
     if (WinExist("ahk_exe WindowsTerminal.exe"))
         WinActivate
+    else
+        Run, % "wt -w 0 new-tab -p bottom --title bottom"
 }
 
 thunderbirdOrBottom() {
