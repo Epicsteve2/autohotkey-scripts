@@ -6,7 +6,7 @@ current_layer := "BTD6"
 tower_click := false
 tower_upgrade := false
 btd6_map := "X Factor"
-btd6_map := "Spillway"
+; btd6_map := "Geared"
 
 ; sendinput breaks osu editor, some VN's and yea
 
@@ -22,7 +22,9 @@ layer_list := ["Main"
     ,"Cafe Stella"
     ,"Cyanotype Daydream"
     ,"Koichoco"
-    ,"Parquet"]
+    ,"Parquet"
+    ,"Summer Pockets"
+    ,"Ever17"]
 
 map_list := ["Chutes"
     ,"Bazaar"
@@ -41,7 +43,10 @@ map_list := ["Chutes"
     ,"Bloonarius Prime"
     ,"Infernal"
     ,"Haunted"
-    ,"Spillway"]
+    ,"Spillway"
+    ,"Quarry"
+    ,"Mesa"
+    ,"Geared"]
 
 btd6_key_bindings := {"dart": "q"
     , "hero": "u"
@@ -484,9 +489,9 @@ NumpadIns & NumpadHome::
     Sleep, 750
     Gui, Destroy
 Return
-; Cafe Stella
+; Ever17
 Numpad0 & Numpad8::
-    current_layer := "Cafe Stella"
+    current_layer := "Ever17"
     Gui, New, ToolWindow, 
 
     Gui, Font, S15, MesloLGS NF
@@ -501,9 +506,10 @@ Numpad0 & Numpad8::
     Gui, Destroy
 Return
 NumpadIns & NumpadUp::
-    current_layer := "Cafe Stella"
+    current_layer := "Ever17"
     Gui, New, ToolWindow, 
 
+ 
     Gui, Font, S15, MesloLGS NF
     Gui, Add, Text, , % "Layer: "
 
@@ -512,6 +518,7 @@ NumpadIns & NumpadUp::
 
     Gui, -Caption +AlwaysOnTop
     Gui, Show, NoActivate AutoSize X1920 Y0,
+
     Sleep, 750
     Gui, Destroy
 Return
@@ -591,7 +598,7 @@ Return
 Numpad0 & .::run, "C:\Program Files\AutoHotkey\WindowSpy.ahk"
 NumpadIns & .::run, "C:\Program Files\AutoHotkey\WindowSpy.ahk"
 
-NumpadDot & q::
+NumpadDot & q:: ; I think this is for cyanotype daydream, idk
     if (WinExist("Translation Aggregator v1.0.6 (Unofficial)") and WinExist("ahk_class Translation Aggregator Main Window") and WinExist("ahk_exe TranslationAggregator.exe")) {
         WinSet, Top,, % "Translation Aggregator v1.0.6 (Unofficial)"
         WinClose, % "Translation Aggregator v1.0.6 (Unofficial)"

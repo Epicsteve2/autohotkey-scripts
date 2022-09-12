@@ -107,6 +107,18 @@
         }
     }
 
+    ChangeTargeting(numTabs, pressCtrl:=False) {
+        Send {Ctrl Down}
+        Loop %numTabs% {
+            Sleep, 65
+            if (pressCtrl)
+                SendInput, {Tab}
+            else
+                SendInput, {Tab}
+        }
+        Send {Ctrl Up}
+    }
+
     NumpadIns & F1::
         global tower_click
 
@@ -347,6 +359,59 @@
     #if (btd6_map = "X Factor")
         NumpadIns & q::PlaceTower("dart", 1358, 267)
         NumpadIns & w::PlaceTower("dart", 353, 203)
+        NumpadIns & e::PlaceTower("sniper", 801, 143)
+        NumpadIns & r::PlaceTower("sniper", 866, 143)
+        NumpadIns & t::PlaceTower("hero", 570, 561)
+        NumpadIns & y::PlaceTower("ninja", 1103, 531)
+        NumpadIns & u::PlaceTower("alch", 1168, 526)
+        NumpadIns & i::PlaceTower("ice", 1162, 310)
+        NumpadIns & o::PlaceTower("ace", 1196, 597)
+        NumpadIns & p::PlaceTower("village", 385, 472)
+        NumpadIns & a::PlaceTower("village", 333, 568)
+        NumpadIns & s::PlaceTower("village", 383, 662)
+        NumpadIns & d::PlaceTower("wizard", 345, 395) ; round 91 sac everything
+        NumpadIns & f::PlaceTower("wizard", 458, 716)
+        NumpadIns & g::PlaceTower("super", 498, 504)
+        NumpadIns & h::PlaceTower("super", 485, 607)
+        NumpadIns & j::PlaceTower("alch", 598, 648)
+        NumpadIns & k::PlaceTower("heli", 234, 452)
+        NumpadIns & l::PlaceTower("heli", 183, 579)
+        NumpadIns & z::PlaceTower("glue", 291, 660)
+        NumpadIns & x::PlaceTower("ice", 420, 803)
+        NumpadIns & c::PlaceTower("ice", 1182, 709)
+        NumpadIns & b::PlaceTower("", 0,0)
+        NumpadIns & n::PlaceTower("", 0,0)
+        NumpadIns & m::PlaceTower("", 0,0) ; -----------
+        NumpadDel & q::PlaceTower("", 0,0)
+        NumpadDel & w::PlaceTower("", 0,0)
+        NumpadDel & e::PlaceTower("", 0,0)
+        NumpadDel & r::PlaceTower("", 0,0)
+        NumpadDel & t::PlaceTower("", 0,0)
+        NumpadDel & y::PlaceTower("", 0,0)
+        NumpadDel & u::PlaceTower("", 0,0)
+        NumpadDel & i::PlaceTower("", 0,0)
+        NumpadDel & o::PlaceTower("", 0,0)
+        NumpadDel & p::PlaceTower("", 0,0)
+        NumpadDel & a::PlaceTower("", 0,0)
+        NumpadDel & s::PlaceTower("", 0,0)
+        NumpadDel & d::PlaceTower("", 0,0)
+        NumpadDel & f::PlaceTower("", 0,0)
+        NumpadDel & g::PlaceTower("", 0,0)
+        NumpadDel & h::PlaceTower("", 0,0)
+        NumpadDel & j::PlaceTower("", 0,0)
+        NumpadDel & k::PlaceTower("", 0,0)
+        NumpadDel & l::PlaceTower("", 0,0)
+        NumpadDel & z::PlaceTower("", 0,0)
+        NumpadDel & x::PlaceTower("", 0,0)
+        NumpadDel & c::PlaceTower("", 0,0)
+        NumpadDel & v::PlaceTower("", 0,0)
+        NumpadDel & b::PlaceTower("", 0,0)
+        NumpadDel & n::PlaceTower("", 0,0)
+        NumpadDel & m::PlaceTower("", 0,0)
+    #if
+    #if (btd6_map = "X Factor old but after Geraldo")
+        NumpadIns & q::PlaceTower("dart", 1358, 267)
+        NumpadIns & w::PlaceTower("dart", 353, 203)
         NumpadIns & e::PlaceTower("sniper", 728, 137)
         NumpadIns & r::PlaceTower("sniper", 923, 137)
         NumpadIns & t::PlaceTower("hero", 570, 561)
@@ -465,29 +530,55 @@
     #if
     #if (btd6_map = "Pat's Pond") ; nvm i don't wanna do this map
         NumpadIns & q::PlaceTower("sub", 1370, 442)
-        NumpadIns & w::PlaceTower("dart", 1470, 605)
-        NumpadIns & e::PlaceTower("sub", 345, 674)
-        NumpadIns & r::PlaceTower("hero", 69, 482)
-        NumpadIns & t::PlaceTower("", 0,0)
-        NumpadIns & y::PlaceTower("", 0,0)
-        NumpadIns & u::PlaceTower("", 0,0)
-        NumpadIns & i::PlaceTower("", 0,0)
-        NumpadIns & o::PlaceTower("", 0,0)
-        NumpadIns & p::PlaceTower("", 0,0)
-        NumpadIns & a::PlaceTower("", 0,0)
-        NumpadIns & s::PlaceTower("", 0,0)
-        NumpadIns & d::PlaceTower("", 0,0)
-        NumpadIns & f::PlaceTower("", 0,0)
-        NumpadIns & g::PlaceTower("", 0,0)
-        NumpadIns & h::PlaceTower("", 0,0)
-        NumpadIns & j::PlaceTower("", 0,0)
-        NumpadIns & k::PlaceTower("", 0,0)
-        NumpadIns & l::PlaceTower("", 0,0)
-        NumpadIns & z::PlaceTower("", 0,0)
-        NumpadIns & x::PlaceTower("", 0,0)
+        NumpadIns & w::PlaceTower("dart", 58, 593)
+        NumpadIns & e::PlaceTower("sub", 345, 674) ; upgrade both subs to double guns, then left to airbust. don't upgrade right
+        NumpadIns & r::PlaceTower("hero", 1431, 313) 
+        NumpadIns & t::PlaceTower("sniper", 1378, 839) ; both 110
+        NumpadIns & y::PlaceTower("sniper", 340, 175)
+        NumpadIns & u::PlaceTower("alch", 241, 732) 
+        NumpadIns & i::PlaceTower("ice", 761, 25)
+        NumpadIns & o::PlaceTower("village", 1585, 366) ; left to 203
+        NumpadIns & p::PlaceTower("bomb", 1456, 375)
+        NumpadIns & a::PlaceTower("bomb", 1499, 429)
+        NumpadIns & s::PlaceTower("village", 1585, 469)
+        NumpadIns & d::PlaceTower("ice", 1481, 595)
+        NumpadIns & f::PlaceTower("tack", 1546, 593) ; just do speed
+        NumpadIns & g::PlaceTower("ice", 1611, 593) 
+        NumpadIns & h::PlaceTower("super", 1369, 527)
+        NumpadIns & j::PlaceTower("mortar", 1569, 264)
+        NumpadIns & k::PlaceTower("heli", 1415, 168)
+        NumpadIns & l::PlaceTower("bomb", 1526, 188)
+        ; NumpadIns & z::PlaceTower("tack", 1544, 593)
+        NumpadIns & x::PlaceTower("tack", 1546, 593)
         NumpadIns & c::PlaceTower("", 0,0)
         NumpadIns & v::PlaceTower("", 0,0)
         NumpadIns & b::PlaceTower("", 0,0)
+        NumpadIns & n::PlaceTower("", 0,0)
+        NumpadIns & m::PlaceTower("", 0,0)
+        ; NumpadIns & g::PlaceTower("village", 1311, 617)
+        ; NumpadIns & k::PlaceTower("bomb", 1607, 654)
+        ; NumpadIns & l::PlaceTower("bomb", 1514, 665)
+        ; NumpadIns & c::PlaceTower("ice", 992, 25) 
+        ; NumpadIns & v::PlaceTower("bomb", 1526, 188)
+        ; NumpadIns & b::PlaceTower("bomb", 1438, 668)
+        ; NumpadIns & n::PlaceTower("bomb", 1410, 729)
+        ; NumpadIns & m::PlaceTower("bomb", 1486, 726)
+        ; NumpadIns & c::PlaceTower("spike", 1565, 674) ; 1601, 658 
+        ; NumpadIns & v::PlaceTower("alch", 1544, 737) ; no discount... oh well
+        ; NumpadIns & b::PlaceTower("tack", 1546, 593)
+        ; NumpadIns & o::PlaceTower("ice", 1525, 593) 
+        ; NumpadIns & p::PlaceTower("spike", 1601, 600)
+        ; NumpadIns & l::PlaceTower("alch", 1525, 593)
+        ; NumpadIns & r::PlaceTower("hero", 69, 482)
+        ; NumpadIns & w::PlaceTower("dart", 1470, 605)
+        ; 56686 lives with speed embrittlement all the way to the right
+        ; 44874 lives with range embrittlement all the way to the right
+        ; 56645 lives with speed embrittlement in the middle
+        ; 55021 lives with range embrittlement in the middle
+        ; i could alch buff it for the range...
+        NumpadDel & g::PlaceTower("alch", 1612, 638)
+
+
     #if
     #if (btd6_map = "Dark Castle") ; dead after version 31. pat is bigger now
         NumpadIns & q::PlaceTower("sub",  1090, 709)
@@ -595,7 +686,7 @@
         NumpadIns & c::PlaceTower("ice", 783, 868)
     #if
     #if (btd6_map = "Haunted")
-        NumpadIns & q::PlaceTower("sub", 778, 856)
+        NumpadIns & q::PlaceTower("", 0,0)
         NumpadIns & w::PlaceTower("", 0,0)
         NumpadIns & e::PlaceTower("", 0,0)
         NumpadIns & r::PlaceTower("", 0,0)
@@ -607,16 +698,46 @@
         NumpadIns & p::PlaceTower("", 0,0)
         NumpadIns & a::PlaceTower("", 0,0)
         NumpadIns & s::PlaceTower("", 0,0)
-        NumpadIns & d::PlaceTower("", 0,0) 
+        NumpadIns & d::PlaceTower("", 0,0)
         NumpadIns & f::PlaceTower("", 0,0)
         NumpadIns & g::PlaceTower("", 0,0)
-        NumpadIns & h::PlaceTower("", 0,0) 
+        NumpadIns & h::PlaceTower("", 0,0)
         NumpadIns & j::PlaceTower("", 0,0)
         NumpadIns & k::PlaceTower("", 0,0)
         NumpadIns & l::PlaceTower("", 0,0)
         NumpadIns & z::PlaceTower("", 0,0)
         NumpadIns & x::PlaceTower("", 0,0)
         NumpadIns & c::PlaceTower("", 0,0)
+        NumpadIns & v::PlaceTower("", 0,0)
+        NumpadIns & b::PlaceTower("", 0,0)
+        NumpadIns & n::PlaceTower("", 0,0)
+        NumpadIns & m::PlaceTower("", 0,0) ; -----------
+        NumpadDel & q::PlaceTower("", 0,0)
+        NumpadDel & w::PlaceTower("", 0,0)
+        NumpadDel & e::PlaceTower("", 0,0)
+        NumpadDel & r::PlaceTower("", 0,0)
+        NumpadDel & t::PlaceTower("", 0,0)
+        NumpadDel & y::PlaceTower("", 0,0)
+        NumpadDel & u::PlaceTower("", 0,0)
+        NumpadDel & i::PlaceTower("", 0,0)
+        NumpadDel & o::PlaceTower("", 0,0)
+        NumpadDel & p::PlaceTower("", 0,0)
+        NumpadDel & a::PlaceTower("", 0,0)
+        NumpadDel & s::PlaceTower("", 0,0)
+        NumpadDel & d::PlaceTower("", 0,0)
+        NumpadDel & f::PlaceTower("", 0,0)
+        NumpadDel & g::PlaceTower("", 0,0)
+        NumpadDel & h::PlaceTower("", 0,0)
+        NumpadDel & j::PlaceTower("", 0,0)
+        NumpadDel & k::PlaceTower("", 0,0)
+        NumpadDel & l::PlaceTower("", 0,0)
+        NumpadDel & z::PlaceTower("", 0,0)
+        NumpadDel & x::PlaceTower("", 0,0)
+        NumpadDel & c::PlaceTower("", 0,0)
+        NumpadDel & v::PlaceTower("", 0,0)
+        NumpadDel & b::PlaceTower("", 0,0)
+        NumpadDel & n::PlaceTower("", 0,0)
+        NumpadDel & m::PlaceTower("", 0,0)
     #if
     #if (btd6_map = "Spillway")
         NumpadIns & q::PlaceTower("boomer", 479, 724)
@@ -633,5 +754,114 @@
         ; possible to double discount boomer, but idk how viable it is
         ; also upgrade sniper
         ; perma a bit before glone on 98s
+    #if
+    #if (btd6_map = "Quarry")
+        NumpadIns & q::PlaceTower("sub", 608, 1007)
+        NumpadIns & w::PlaceTower("dart", 1042, 782)
+        NumpadIns & e::PlaceTower("hero", 884, 461)
+        NumpadIns & r::PlaceTower("bomb", 926, 516)
+        NumpadIns & t::PlaceTower("bomb", 968, 461)
+        NumpadIns & y::PlaceTower("spike", 834, 703)
+        NumpadIns & u::PlaceTower("village", 824, 528)
+        NumpadIns & i::PlaceTower("alch", 716, 711)
+        NumpadIns & o::PlaceTower("village", 702, 374)
+        NumpadIns & p::PlaceTower("ice", 587, 542)
+    #if
+    #if (btd6_map = "Mesa")
+        NumpadIns & q::PlaceTower("dart", 226, 758)
+        NumpadIns & w::PlaceTower("dart", 1109, 598)
+        NumpadIns & e::PlaceTower("dart", 1144, 340)
+        NumpadIns & r::PlaceTower("engineer", 961, 527)
+        NumpadIns & t::PlaceTower("hero", 1000, 461)
+        NumpadIns & y::PlaceTower("engineer", 898, 564)
+        NumpadIns & u::PlaceTower("alch", 855, 368)
+        NumpadIns & i::PlaceTower("bomb", 340, 891) ; mauler 
+        NumpadIns & o::PlaceTower("spike", 1533, 354) ; 102
+        NumpadIns & p::PlaceTower("bomb", 1030, 400)
+        NumpadIns & a::PlaceTower("village", 1235, 434)
+        NumpadIns & s::PlaceTower("village", 1127, 391)
+        NumpadIns & d::PlaceTower("bomb", 1137, 542)
+        NumpadIns & f::PlaceTower("alch", 1094, 493)
+        NumpadIns & g::PlaceTower("village", 1155, 291) ; discount super
+        NumpadIns & h::PlaceTower("super", 1139, 537)
+        NumpadIns & j::PlaceTower("super", 1354, 426)
+        NumpadIns & k::PlaceTower("ice", 1037, 409)
+        NumpadIns & l::PlaceTower("ice", 1210, 357)
+        NumpadIns & z::PlaceTower("glue", 1275, 362)
+    #if
+    #if (btd6_map = "Geared")
+        NumpadIns & q::PlaceTower("dart", 348, 634)
+        NumpadIns & w::
+            global tower_click
+            tower_click := True
+            PlaceTower("sniper", 828, 877)
+            Sleep, 65
+            SendInput, {Click}
+            ChangeTargeting(1, True)  
+        Return
+        NumpadIns & e::
+            global tower_click
+            tower_click := True
+            PlaceTower("sniper", 561, 566)
+            Sleep, 65
+            SendInput, {Click}
+            ChangeTargeting(1, True)  
+        Return
+        NumpadIns & r::PlaceTower("sniper", 778, 387)
+        NumpadIns & t::PlaceTower("hero", 393, 767)
+        NumpadIns & u::
+            global tower_click
+            tower_click := True
+            PlaceTower("sniper", 703, 846)
+            Sleep, 65
+            SendInput, {Click}
+            ChangeTargeting(1, True)  
+        Return ; change last sniper to strong 
+        NumpadIns & y::PlaceTower("druid", 379, 749)
+        NumpadIns & i::PlaceTower("druid", 367, 701)
+        NumpadIns & o::PlaceTower("", 0,0)
+        NumpadIns & p::PlaceTower("", 0,0)
+        NumpadIns & a::PlaceTower("", 0,0)
+        NumpadIns & s::PlaceTower("", 0,0)
+        NumpadIns & d::PlaceTower("", 0,0)
+        NumpadIns & f::PlaceTower("", 0,0)
+        NumpadIns & g::PlaceTower("", 0,0)
+        NumpadIns & h::PlaceTower("", 0,0)
+        NumpadIns & j::PlaceTower("", 0,0)
+        NumpadIns & k::PlaceTower("", 0,0)
+        NumpadIns & l::PlaceTower("", 0,0)
+        NumpadIns & z::PlaceTower("", 0,0)
+        NumpadIns & x::PlaceTower("", 0,0)
+        NumpadIns & c::PlaceTower("", 0,0)
+        NumpadIns & v::PlaceTower("", 0,0)
+        NumpadIns & b::PlaceTower("", 0,0)
+        NumpadIns & n::PlaceTower("", 0,0)
+        NumpadIns & m::PlaceTower("", 0,0) ; -----------
+        NumpadDel & q::PlaceTower("", 0,0)
+        NumpadDel & w::PlaceTower("", 0,0)
+        NumpadDel & e::PlaceTower("", 0,0)
+        NumpadDel & r::PlaceTower("", 0,0)
+        NumpadDel & t::PlaceTower("", 0,0)
+        NumpadDel & y::PlaceTower("", 0,0)
+        NumpadDel & u::PlaceTower("", 0,0)
+        NumpadDel & i::PlaceTower("", 0,0)
+        NumpadDel & o::PlaceTower("", 0,0)
+        NumpadDel & p::PlaceTower("", 0,0)
+        NumpadDel & a::PlaceTower("", 0,0)
+        NumpadDel & s::PlaceTower("", 0,0)
+        NumpadDel & d::PlaceTower("", 0,0)
+        NumpadDel & f::PlaceTower("", 0,0)
+        NumpadDel & g::PlaceTower("", 0,0)
+        NumpadDel & h::PlaceTower("", 0,0)
+        NumpadDel & j::PlaceTower("", 0,0)
+        NumpadDel & k::PlaceTower("", 0,0)
+        NumpadDel & l::PlaceTower("", 0,0)
+        NumpadDel & z::PlaceTower("", 0,0)
+        NumpadDel & x::PlaceTower("", 0,0)
+        NumpadDel & c::PlaceTower("", 0,0)
+        NumpadDel & v::PlaceTower("", 0,0)
+        NumpadDel & b::PlaceTower("", 0,0)
+        NumpadDel & n::PlaceTower("", 0,0)
+        NumpadDel & m::PlaceTower("", 0,0)
     #if
 #if

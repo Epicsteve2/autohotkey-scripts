@@ -411,3 +411,137 @@
     Return
     $Space::IfKoichocoKey("Enter", "Space")
 #if
+
+#if (current_layer = "Summer Pockets")
+    IfSummerPocketsKey(new_key, original_key) {
+        global koichoco_pid
+        if WinActive("ahk_exe SiglusEngine.exe")
+            SendInput, {%new_key%}
+        else
+            SendInput, {%original_key%}
+    }
+    IfSummerPocketsClick(key, x, y) {
+        global koichoco_pid
+        if WinActive("ahk_exe SiglusEngine.exe")
+            clickAndReturn(x, y)
+        else
+            SendInput, {%key%}
+    }
+    $a::IfSummerPocketsClick("a", 903, 1050)
+    $s::IfSummerPocketsClick("s", 622, 1056)
+    $l::IfSummerPocketsClick("l", 713, 1047)
+    ; $c::IfSummerPocketsClick("c", 1697, 1058) ; right click
+    $c::IfSummerPocketsKey("Click Right", "c")
+    $v::
+        if WinActive("ahk_exe SiglusEngine.exe") {
+            SetDefaultMouseSpeed, 0 ; Defaul is 2
+            MouseMove, 1808, 929
+            Sleep 400
+            Click Left
+        } else {
+            SendInput, {v}
+        }
+    Return
+
+    $r::
+        if WinActive("ahk_exe SiglusEngine.exe") {
+            SetDefaultMouseSpeed, 0 ; Defaul is 2
+            MouseMove, 1808, 929
+            Sleep 400
+            Click Left
+        } else {
+            SendInput, {r}
+        }
+    Return
+
+    $m::
+        if WinActive("ahk_exe SiglusEngine.exe") {
+            SetDefaultMouseSpeed, 0 ; Defaul is 2
+            Send {Click, 1287, 1046}
+            Sleep 400
+            Send {Click, 1775, 63}
+            Sleep 400
+            Send {Click, 106, 200}
+            Click Right
+        } else {
+            SendInput, {m}
+        }
+    Return
+
+    $f::IfSummerPocketsClick("f", 991, 1043)
+    $o::IfSummerPocketsClick("o", 1287, 1046)
+    $t::IfSummerPocketsClick("t", 1093, 1044)
+
+    $Space::IfSummerPocketsKey("Enter", "Space")
+#if
+
+NumpadDot & e:: ; touchable old
+    if (WinExist("Translation Aggregator v1.0.6 (Unofficial)") and WinExist("ahk_class Translation Aggregator Main Window") and WinExist("ahk_exe TranslationAggregator.exe")) {
+        WinSet, Top,, % "Translation Aggregator v1.0.6 (Unofficial)"
+        WinClose, % "Translation Aggregator v1.0.6 (Unofficial)"
+    }
+    if (WinExist("Menu Window") and WinExist("ahk_class Chrome_WidgetWin_1") and WinExist("ahk_exe userInterface.exe")) {
+        WinHide, % "Menu Window"
+    }
+    if (WinExist("Translation Display Window") and WinExist("ahk_class Chrome_WidgetWin_1") and WinExist("ahk_exe userInterface.exe")) {
+        WinSet, Top,, % "Translation Display Window"
+        WinMove, % "Translation Display Window", , 1920, 0
+    }
+    if (WinExist("Screen Capture Window") and WinExist("ahk_class Chrome_WidgetWin_1") and WinExist("ahk_exe userInterface.exe")) {
+        WinSet, Top,, % "Screen Capture Window"
+        WinMove, % "Screen Capture Window", , 2600, 0
+    }
+    if (WinExist("Background Removal Window") and WinExist("ahk_class Chrome_WidgetWin_1") and WinExist("ahk_exe userInterface.exe")) {
+        WinSet, Top,, % "Background Removal Window"
+        WinMove, % "Background Removal Window", , 2880, 0, A_ScreenWidth / 2, A_ScreenHeight ;/ 2
+    }
+    if (WinExist("electron-quick-start") and WinExist("ahk_class Chrome_WidgetWin_1") and WinExist("ahk_exe userInterface.exe")) {
+        WinSet, Top,, % "electron-quick-start"
+        WinMove, % "electron-quick-start", , 341, 776, 1561-341, 977-776 ; for cyanotype (and prolly principia games and newton)
+        WinSet AlwaysOnTop, On, % "electron-quick-start"
+    }
+    if (WinExist("C:\windows\system32\cmd.exe") and WinExist("ahk_class ConsoleWindowClass") and WinExist("ahk_exe userInterface.exe")) {
+        WinHide, % "C:\windows\system32\cmd.exe"
+    }
+    ; brightness min is 171
+Return
+
+#if (current_layer = "Ever17")
+    IfEver17Key(new_key, original_key) {
+        if WinActive("ahk_class ever17PC_us")
+            Send, {%new_key% down}{%new_key% up}
+        else
+            Send, {%original_key% down}{%original_key% up}
+    }
+    ; Unused
+    IfEver17Click(key, x, y) {
+        if WinActive("ahk_class ever17PC_us")
+            clickAndReturn(x, y)
+        else
+            Send, {%key%}
+    }
+    $a::
+        SetKeyDelay, 25, 25
+        Send, {Space down}{Space up}
+        Send, {Up down}{Up up}
+        Send, {Up down}{Up up}
+        Send, {Up down}{Up up}
+        Send, {Up down}{Up up}
+        Send, {Up down}{Up up}
+        Send, {Up down}{Up up}
+        Send, {Up down}{Up up}
+        Send, {Up down}{Up up}
+        Send, {Up down}{Up up}
+        Send, {Right down}{Right up}
+        Send, {Up down}{Up up}
+        Send, {Up down}{Up up}
+        Send, {Up down}{Up up}
+        Send, {Enter down}{Enter up}
+    Return
+    $s::IfEver17Key("F6", "s")
+    $f::IfEver17Key("F3", "f")
+    $l::IfEver17Key("F7", "l")
+    $c::IfEver17Key("F2", "c")
+    $o::IfEver17Key("F8", "o")
+    $Space::IfEver17Key("Enter", "Space")
+#if
