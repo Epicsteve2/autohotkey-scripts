@@ -364,50 +364,31 @@
         NumpadIns & t::PlaceTower("hero", 570, 561)
         NumpadIns & y::PlaceTower("ninja", 1103, 531)
         NumpadIns & u::PlaceTower("alch", 1168, 526)
-        NumpadIns & i::PlaceTower("ice", 1162, 310)
-        NumpadIns & o::PlaceTower("ace", 1196, 597)
+        NumpadIns & i::PlaceTower("spike", 1329, 369)
+        NumpadIns & o::PlaceTower("ace", 1196, 597) ; sac and ability round 43
         NumpadIns & p::PlaceTower("village", 385, 472)
         NumpadIns & a::PlaceTower("village", 333, 568)
-        NumpadIns & s::PlaceTower("village", 383, 662)
-        NumpadIns & d::PlaceTower("wizard", 345, 395) ; round 91 sac everything
+        NumpadIns & s::PlaceTower("wizard", 345, 395) ; round 91 sac everything
+        NumpadIns & d::PlaceTower("village", 383, 662) ; i think i get bottom wizard first after the triple village with camo
         NumpadIns & f::PlaceTower("wizard", 458, 716)
         NumpadIns & g::PlaceTower("super", 498, 504)
         NumpadIns & h::PlaceTower("super", 485, 607)
-        NumpadIns & j::PlaceTower("alch", 598, 648)
-        NumpadIns & k::PlaceTower("heli", 234, 452)
-        NumpadIns & l::PlaceTower("heli", 183, 579)
-        NumpadIns & z::PlaceTower("glue", 291, 660)
-        NumpadIns & x::PlaceTower("ice", 420, 803)
-        NumpadIns & c::PlaceTower("ice", 1182, 709)
-        NumpadIns & b::PlaceTower("", 0,0)
-        NumpadIns & n::PlaceTower("", 0,0)
-        NumpadIns & m::PlaceTower("", 0,0) ; -----------
-        NumpadDel & q::PlaceTower("", 0,0)
-        NumpadDel & w::PlaceTower("", 0,0)
-        NumpadDel & e::PlaceTower("", 0,0)
-        NumpadDel & r::PlaceTower("", 0,0)
-        NumpadDel & t::PlaceTower("", 0,0)
-        NumpadDel & y::PlaceTower("", 0,0)
-        NumpadDel & u::PlaceTower("", 0,0)
-        NumpadDel & i::PlaceTower("", 0,0)
-        NumpadDel & o::PlaceTower("", 0,0)
-        NumpadDel & p::PlaceTower("", 0,0)
-        NumpadDel & a::PlaceTower("", 0,0)
-        NumpadDel & s::PlaceTower("", 0,0)
-        NumpadDel & d::PlaceTower("", 0,0)
-        NumpadDel & f::PlaceTower("", 0,0)
-        NumpadDel & g::PlaceTower("", 0,0)
-        NumpadDel & h::PlaceTower("", 0,0)
-        NumpadDel & j::PlaceTower("", 0,0)
-        NumpadDel & k::PlaceTower("", 0,0)
-        NumpadDel & l::PlaceTower("", 0,0)
-        NumpadDel & z::PlaceTower("", 0,0)
-        NumpadDel & x::PlaceTower("", 0,0)
-        NumpadDel & c::PlaceTower("", 0,0)
-        NumpadDel & v::PlaceTower("", 0,0)
-        NumpadDel & b::PlaceTower("", 0,0)
-        NumpadDel & n::PlaceTower("", 0,0)
-        NumpadDel & m::PlaceTower("", 0,0)
+        NumpadIns & j::PlaceTower("heli", 234, 452) ; 83 adora on strong, get downdraft and all abilities
+        NumpadIns & k::PlaceTower("glue", 291, 660) ; 87 def sac
+        NumpadIns & l::PlaceTower("alch", 598, 648)
+        NumpadIns & v::PlaceTower("druid", 304, 425)
+        NumpadIns & b::PlaceTower("druid", 290, 490)
+        NumpadIns & n::PlaceTower("druid", 241, 540)
+        NumpadIns & m::PlaceTower("druid", 249, 611)
+        NumpadIns & z::PlaceTower("ice", 420, 803) ; 93 sec everything
+        NumpadIns & x::PlaceTower("ice", 1182, 709) 
+        NumpadIns & c::PlaceTower("ice", 1162, 310) ; 110
+        ; 85 ball of light, glue top left instantly (after both super sees it)
+        ; 86 sac ninja when 2 bfbs appear top left. also ball of light on first when they appear too
+        ; 87 first glow when bottom left zomgs are visible to supers. then glue + sec alch + ball of light top right zomgs
+        ; 88 glue + sac zomgs. downdraft top zomg first
+        ; 89 long arm of light + phoenix + glue  mobas. then ball of light bfbs
+        ; 93 sac everything
     #if
     #if (btd6_map = "X Factor old but after Geraldo")
         NumpadIns & q::PlaceTower("dart", 1358, 267)

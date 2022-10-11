@@ -513,30 +513,27 @@ Return
         else
             Send, {%original_key% down}{%original_key% up}
     }
-    ; Unused
-    IfEver17Click(key, x, y) {
-        if WinActive("ahk_class ever17PC_us")
-            clickAndReturn(x, y)
-        else
-            Send, {%key%}
-    }
     $a::
-        SetKeyDelay, 25, 25
-        Send, {Space down}{Space up}
-        Send, {Up down}{Up up}
-        Send, {Up down}{Up up}
-        Send, {Up down}{Up up}
-        Send, {Up down}{Up up}
-        Send, {Up down}{Up up}
-        Send, {Up down}{Up up}
-        Send, {Up down}{Up up}
-        Send, {Up down}{Up up}
-        Send, {Up down}{Up up}
-        Send, {Right down}{Right up}
-        Send, {Up down}{Up up}
-        Send, {Up down}{Up up}
-        Send, {Up down}{Up up}
-        Send, {Enter down}{Enter up}
+        if WinActive("ahk_class ever17PC_us") {
+            SetKeyDelay, 25, 25
+            Send, {Space down}{Space up}
+            Send, {Up down}{Up up}
+            Send, {Up down}{Up up}
+            Send, {Up down}{Up up}
+            Send, {Up down}{Up up}
+            Send, {Up down}{Up up}
+            Send, {Up down}{Up up}
+            Send, {Up down}{Up up}
+            Send, {Up down}{Up up}
+            Send, {Up down}{Up up}
+            Send, {Right down}{Right up}
+            Send, {Up down}{Up up}
+            Send, {Up down}{Up up}
+            Send, {Up down}{Up up}
+            Send, {Enter down}{Enter up}
+        } else {
+            Send, {a down}{a up}
+        }
     Return
     $s::IfEver17Key("F6", "s")
     $f::IfEver17Key("F3", "f")
