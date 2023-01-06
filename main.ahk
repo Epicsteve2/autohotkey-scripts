@@ -489,9 +489,9 @@ NumpadIns & NumpadHome::
     Sleep, 750
     Gui, Destroy
 Return
-; Ever17
+; The Fruit of Grisaia
 Numpad0 & Numpad8::
-    current_layer := "Ever17"
+    current_layer := "The Fruit of Grisaia"
     Gui, New, ToolWindow, 
 
     Gui, Font, S15, MesloLGS NF
@@ -506,7 +506,7 @@ Numpad0 & Numpad8::
     Gui, Destroy
 Return
 NumpadIns & NumpadUp::
-    current_layer := "Ever17"
+    current_layer := "The Fruit of Grisaia"
     Gui, New, ToolWindow, 
 
  

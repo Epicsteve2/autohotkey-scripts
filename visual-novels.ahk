@@ -542,3 +542,31 @@ Return
     $o::IfEver17Key("F8", "o")
     $Space::IfEver17Key("Enter", "Space")
 #if
+#if (current_layer = "The Fruit of Grisaia")
+    $s::
+        if WinActive("ahk_exe Grisaia.exe") {
+            SendInput, {Esc}
+            Sleep 400
+            Send, {Right down}{Right up}
+            Sleep 100
+            Send, {Enter down}{Enter up}
+            MouseMove, 638, 50
+        } else {
+            SendInput, {s}
+        }
+    Return
+    $l::
+        if WinActive("ahk_exe Grisaia.exe") {
+            SendInput, {Esc}
+            Sleep 400
+            Send, {Right down}{Right up}
+            Sleep 100
+            Send, {Right down}{Right up}
+            Sleep 100
+            Send, {Enter down}{Enter up}
+            MouseMove, 638, 50
+        } else {
+            SendInput, {l}
+        }
+    Return
+#if
