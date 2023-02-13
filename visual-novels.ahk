@@ -596,3 +596,73 @@ Return
         }
     Return
 #if
+#if (current_layer = "The Labyrinth of Grisaia")
+    $a::
+        if WinActive("ahk_exe Grisaia2.exe") {
+            Send, {a down}{a up}
+            Sleep 50
+            Send, {a down}{a up}
+            Sleep 50
+            Send, {a down}{a up}
+            Sleep 50
+            Send, {a down}{a up}
+            Sleep 50
+            Send, {a down}{a up}
+            Sleep 50
+            Send, {a down}{a up}
+        } else {
+            SendInput, {a}
+        }
+    Return
+    $s::
+        if WinActive("ahk_exe Grisaia2.exe") {
+            SendInput, {Esc}
+            MouseMove 612, 143
+            Sleep 250
+            Send, {Up down}{Up up}
+            Sleep 75
+            Send, {Up down}{Up up}
+            Sleep 75
+            Send, {Up down}{Up up}
+            Sleep 75            
+            Send, {Left down}{Left up}
+            Sleep 75
+            Send, {Left down}{Left up}
+            Sleep 75
+            Send, {Left down}{Left up}
+            Sleep 75
+            Send, {Enter down}{Enter up}
+            MouseMove, 638, 50
+        } else {
+            SendInput, {s}
+        }
+    Return
+    $l::
+        if WinActive("ahk_exe Grisaia2.exe") {
+            SendInput, {Esc}
+            MouseMove 612, 143
+            Sleep 250
+            Send, {Up down}{Up up}
+            Sleep 75
+            Send, {Up down}{Up up}
+            Sleep 75
+            Send, {Up down}{Up up}
+            Sleep 75            
+            Send, {Left down}{Left up}
+            Sleep 75
+            Send, {Left down}{Left up}
+            Sleep 75
+            Send, {Enter down}{Enter up}
+            MouseMove, 638, 50
+        } else {
+            SendInput, {l}
+        }
+    Return
+    $Space::
+        if WinActive("ahk_exe Grisaia2.exe") {
+            SendInput, {Enter}
+        } else {
+            SendInput, {Space}
+        }
+    Return
+#if

@@ -24,7 +24,9 @@ layer_list := ["Main"
     ,"Koichoco"
     ,"Parquet"
     ,"Summer Pockets"
-    ,"Ever17"]
+    ,"Ever17"
+    ,"The Fruit of Grisaia"
+    ,"The Labyrinth of Grisaia"]
 
 map_list := ["Chutes"
     ,"Bazaar"
@@ -491,7 +493,7 @@ NumpadIns & NumpadHome::
 Return
 ; The Fruit of Grisaia
 Numpad0 & Numpad8::
-    current_layer := "The Fruit of Grisaia"
+    current_layer := "The Labyrinth of Grisaia"
     Gui, New, ToolWindow, 
 
     Gui, Font, S15, MesloLGS NF
@@ -506,7 +508,7 @@ Numpad0 & Numpad8::
     Gui, Destroy
 Return
 NumpadIns & NumpadUp::
-    current_layer := "The Fruit of Grisaia"
+    current_layer := "The Labyrinth of Grisaia"
     Gui, New, ToolWindow, 
 
  
@@ -562,6 +564,22 @@ Return
 Numpad0 & Numpad9::
     GuiTopLeft("Reloading script...")
     Reload
+Return
+
+; remove title bar
+Numpad0 & t::
+    WinSet, Style, -0xC00000, A
+Return
+NumpadIns & t::
+    WinSet, Style, -0xC00000, A
+Return
+
+; test title bar
+Numpad0 & y::
+    WinSet, Style, -0xC00000, A
+Return
+NumpadIns & y::
+    WinSet, Style, -0xC00000, A
 Return
 
 ; Print cursor position. relative to window
