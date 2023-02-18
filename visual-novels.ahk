@@ -618,7 +618,7 @@ Return
         if WinActive("ahk_exe Grisaia2.exe") {
             SendInput, {Esc}
             MouseMove 612, 143
-            Sleep 250
+            Sleep 650
             Send, {Up down}{Up up}
             Sleep 75
             Send, {Up down}{Up up}
@@ -641,7 +641,7 @@ Return
         if WinActive("ahk_exe Grisaia2.exe") {
             SendInput, {Esc}
             MouseMove 612, 143
-            Sleep 250
+            Sleep 650
             Send, {Up down}{Up up}
             Sleep 75
             Send, {Up down}{Up up}
