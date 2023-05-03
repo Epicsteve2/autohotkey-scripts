@@ -3,6 +3,7 @@
 SetWorkingDir, %A_ScriptDir%
 
 current_layer := "BTD6"
+numpad8_layer := "The Eden of Grisaia"
 tower_click := false
 tower_upgrade := false
 btd6_map := "X Factor"
@@ -26,7 +27,8 @@ layer_list := ["Main"
     ,"Summer Pockets"
     ,"Ever17"
     ,"The Fruit of Grisaia"
-    ,"The Labyrinth of Grisaia"]
+    ,"The Labyrinth of Grisaia"
+    ,"The Eden of Grisaia"]
 
 map_list := ["Chutes"
     ,"Bazaar"
@@ -491,9 +493,9 @@ NumpadIns & NumpadHome::
     Sleep, 750
     Gui, Destroy
 Return
-; The Fruit of Grisaia
+; The Eden of Grisaia
 Numpad0 & Numpad8::
-    current_layer := "The Labyrinth of Grisaia"
+    current_layer := numpad8_layer
     Gui, New, ToolWindow, 
 
     Gui, Font, S15, MesloLGS NF
@@ -508,7 +510,8 @@ Numpad0 & Numpad8::
     Gui, Destroy
 Return
 NumpadIns & NumpadUp::
-    current_layer := "The Labyrinth of Grisaia"
+    current_layer := numpad8_layer
+
     Gui, New, ToolWindow, 
 
  

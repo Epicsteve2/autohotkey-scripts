@@ -666,3 +666,58 @@ Return
         }
     Return
 #if
+#if (current_layer = "The Eden of Grisaia")
+    $s::
+        if WinActive("ahk_exe Grisaia3.bin") {
+            SendInput, {Esc}
+            MouseMove 612, 143
+            Sleep 250
+            Send, {Up down}{Up up}
+            Sleep 75
+            Send, {Up down}{Up up}
+            Sleep 75
+            Send, {Up down}{Up up}
+            Sleep 75            
+            Send, {Left down}{Left up}
+            Sleep 75
+            Send, {Left down}{Left up}
+            Sleep 75
+            Send, {Left down}{Left up}
+            Sleep 75
+            Send, {Enter down}{Enter up}
+            MouseMove, 638, 50
+        } else {
+            SendInput, {s}
+        }
+    Return
+    $l::
+        if WinActive("ahk_exe Grisaia3.bin") {
+            SendInput, {Esc}
+            MouseMove 612, 143
+            Sleep 250
+            Send, {Up down}{Up up}
+            Sleep 75
+            Send, {Up down}{Up up}
+            Sleep 75
+            Send, {Up down}{Up up}
+            Sleep 75            
+            Send, {Left down}{Left up}
+            Sleep 75
+            Send, {Left down}{Left up}
+            Sleep 75
+            Send, {Enter down}{Enter up}
+            MouseMove, 638, 50
+        } else {
+            SendInput, {l}
+        }
+    Return
+    $Space::
+        if WinActive("ahk_exe Grisaia3.bin") {
+            SendInput, {Enter}
+        } else {
+            SendInput, {Space}
+        }
+    Return
+#if
+; change options button to O, repeat to R. Hide to C, Skip to F, Auto to A, N and B for next and back options, 
+
